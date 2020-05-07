@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <textarea rows="3" onChange={(e) => this.counter(e)}>{this.state.value}</textarea>
+        <textarea rows="3" onChange={this.counter}></textarea>
         <div className="counter">{this.state.length}</div>
       </div>
     );
