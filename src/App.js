@@ -4,22 +4,23 @@ import './App.css';
 class App extends Component {
   constructor(){
     super();
-    this.handleKey = this.handleKey.bind(this);
-    this.state = { value: null }
+    this.counter = this.counter.bind(this);
+    this.state = { 
+      length: 0 
+    }
   }
 
   render() {
-    let length = this.state.value ? this.state.value.length : 0;
     return (
       <div className="container">
-        <textarea rows="3" onChange={(e) => this.handleKey(e)}>{this.state.value}</textarea>
-        <div className="counter">{length}</div>
+        <textarea rows="3" onChange={(e) => this.counter(e)}>{this.state.value}</textarea>
+        <div className="counter">{this.state.length}</div>
       </div>
     );
   }
 
-  handleKey(e){
-    this.setState({ value: e.target.value.length })
+  counter(e){
+    this.setState({ length: e.target.value.length })
   }
 }
 
